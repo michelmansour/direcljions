@@ -26,12 +26,22 @@
        (get :steps))
    (map #(get % :html_instructions))))
 
+(defn build-maps-url [start dest api-key]
+  (format
+   "https://maps.googleapis.com/maps/api/directions/json?origin=%s&destination=%s&key=%s"
+   start
+   dest
+   api-key))
+
 (defn get-directions [{:keys [params]}]
   (layout/render "directions.html" {:start (:start params)
                                     :dest (:dest params)
                                     :directions (parse-google-maps-response
                                                  (client/get
-                                                  "https://maps.googleapis.com/maps/api/directions/json?origin=Disneyland&destination=Universal+Studios+Hollywood&key=API_KEY"))}))
+                                                  (build-maps-url
+                                                   (:start params)
+                                                   (:dest params)
+                                                   "API_KEY")))}))
 
 (defroutes home-routes
   (GET "/" [] (home-page))
