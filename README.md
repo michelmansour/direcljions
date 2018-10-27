@@ -1,8 +1,6 @@
 # direcljions
 
-generated using Luminus version "3.10.9"
-
-FIXME
+The `l` is silent.
 
 ## Prerequisites
 
@@ -18,4 +16,4 @@ To start a web server for the application, run:
 
 ## License
 
-Copyright © 2018 FIXME
+Copyright © 2018 Michel Mansour
