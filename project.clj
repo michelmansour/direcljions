@@ -3,7 +3,9 @@
   :description "FIXME: write description"
   :url "http://example.com/FIXME"
 
-  :dependencies [[clojure.java-time "0.3.2"]
+  :dependencies [[cheshire "5.8.1"]
+                 [clj-http "3.9.1"]
+                 [clojure.java-time "0.3.2"]
                  [com.fasterxml.jackson.core/jackson-core "2.9.7"]
                  [com.fasterxml.jackson.datatype/jackson-datatype-jdk8 "2.9.7"]
                  [compojure "1.6.1"]

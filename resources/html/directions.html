@@ -26,4 +26,9 @@
     {% endif %}
     <input type="submit" class="btn btn-primary" value="Get directions" />
 </form>
+<ul>
+    {% for item in directions %}
+    <li>{{item}}</li>
+    {% endfor  %}
+</ul>
 {% endblock %}
