@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Start: {{start}}</h1>
+<h1>Dest: {{dest}}</h1>
+<form method="POST" action="/directions">
+    {% csrf-field %}
+    <p>
+        Starting Point:
+        <input class="form-control"
+               type="text"
+               name="start"
+               value="{{start}}" />
+    </p>
+    {% if errors.start %}
+    <div class="alert alert-danger">{{errors.start|join}}</div>
+    {% endif %}
+    <p>
+        Destination:
+        <input class="form-control"
+               type="text"
+               name="dest"
+               value="{{dest}}" />
+    </p>
+    {% if errors.dest %}
+    <div class="alert alert-danger">{{errors.dest|join}}</div>
+    {% endif %}
+    <input type="submit" class="btn btn-primary" value="Get directions" />
+</form>
+{% endblock %}
