@@ -7,8 +7,7 @@
             [cheshire.core :refer :all]))
 
 (defn home-page []
-  (layout/render
-   "home.html" {:docs (-> "docs/docs.md" io/resource slurp)}))
+  (response/found "/directions"))
 
 (defn about-page []
   (layout/render "about.html"))
