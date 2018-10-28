@@ -87,13 +87,13 @@
           <table class="table">
               <thead>
                   <tr>
-                      <th scope="col">Directions from {{start}} to {{dest}}</th>
+                      <th scope="col">Directions from "{{start}}" to "{{dest}}"</th>
                   </tr>
               </thead>
               <tbody>
-                  {% for item in directions %}
+                  {% for step in directions %}
                   <tr>
-                      <td>{{item}}</td>
+                      <td>{{step|safe}}</td>
                   </tr>
                   {% endfor %}
               </tbody>
