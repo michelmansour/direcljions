@@ -78,6 +78,7 @@
               {% endif %}
               <input type="submit" class="btn btn-primary" value="Get directions" />
           </form>
+          {% if all start|not-empty dest|not-empty %}
           <table class="table">
               <thead>
                   <tr>
@@ -92,6 +93,7 @@
                   {% endfor %}
               </tbody>
           </table>
+          {% endif %}
       </div>
       <div id="map"></div>
       <script>
