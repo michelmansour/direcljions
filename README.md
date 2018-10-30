@@ -17,7 +17,19 @@ You will need [Leiningen][2] 2.0 or above installed. You will also need a
 
 ## Running
 
-First, replace any occurrences of `API_KEY` (there should be two, in: `src/clj/direcljions/routes/home.clj` and `resources/html/directions.html`) with your
+Create a `dev-config.edn` configuration file in the top-level of the project. It should look something like this:
+
+```
+{:dev true
+ :port 3000
+ ;; when :nrepl-port is set the application starts the nREPL server on load
+ :nrepl-port 7000
+
+ }
+```
+(Luminus creates this file when you run `lein new luminus my-app` but omits it from source control.)
+
+Next, replace any occurrences of `API_KEY` (there should be two, in: `src/clj/direcljions/routes/home.clj` and `resources/html/directions.html`) with your
 actual Google Maps API key. Otherwise, fetching directions and displaying the
 map will fail 😱.
 
@@ -25,7 +37,7 @@ Then to start the web server, run:
 
     lein run
 
-Now you can navigate to `http://localhost:3000` to use the app.
+Now you can navigate to `http://localhost:3000` (or whatever port you specified in the config file) to use the app.
 
 ## License
 
